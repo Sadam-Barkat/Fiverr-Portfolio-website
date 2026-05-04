@@ -1,0 +1,97 @@
+{
+  "projects": [
+    {
+      "id": "01fa4cd1-fd29-41f5-b83e-a1b30276d5db",
+      "slug": "hoooo",
+      "title": "Teting",
+      "description": "testing purpose",
+      "technologies": [
+        "python"
+      ],
+      "category": "Backend API",
+      "useCase": "aiiiiiii",
+      "overview": "khoone mein tere mitti",
+      "problem": "khatarnak khiladi",
+      "solution": "noooooooo",
+      "impact": "noooooooooooo",
+      "productionUrl": "https://internationaltijarat.com/",
+      "thumbnailUrl": "/uploads/projects/hoooo/thumbnail-82e1a623-35bf-414b-877e-5ee43cb727a0.jpg",
+      "images": [
+        "/uploads/projects/hoooo/thumbnail-82e1a623-35bf-414b-877e-5ee43cb727a0.jpg",
+        "/uploads/projects/hoooo/gallery-db499cd3-d808-42e4-a762-79e02dd5e852.jpg",
+        "/uploads/projects/hoooo/gallery-b4848ed8-5a9f-4314-9443-448cab4d0027.jpg",
+        "/uploads/projects/hoooo/gallery-b94163ae-9400-4f14-aa8f-82c81cbd8bda.jpg",
+        "/uploads/projects/hoooo/gallery-13462e90-b1b5-4e49-9fce-5e0cf38ae955.jpg",
+        "/uploads/projects/hoooo/gallery-96c0a3d1-f74b-4319-b87f-ff1a6e5d222b.jpg"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "id": "1",
+      "title": "Automating Repetitive Workflows",
+      "description": "Identify and eliminate manual processes by building custom automation that connects your existing tools and handles routine tasks without human intervention.",
+      "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20role%3D%22img%22%20aria-label%3D%22Workflow%20Automation%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230f766e%22%2F%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%20%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url(%23g)%22%2F%3E%20%3Ccircle%20cx%3D%22980%22%20cy%3D%22120%22%20r%3D%22220%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22680%22%20r%3D%22180%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22170%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%3EWorkflow%20Automation%3C%2Ftext%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22240%22%20fill%3D%22rgba(255%2C255%2C255%2C0.82)%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%3EVisual%20process%20flows%2C%20triggers%2C%20and%20integrations%3C%2Ftext%3E%20%3Crect%20x%3D%2280%22%20y%3D%22310%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22350%22%20width%3D%22250%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22420%22%20width%3D%22520%22%20height%3D%22180%22%20rx%3D%2228%22%20fill%3D%22rgba(15%2C23%2C42%2C0.45)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22470%22%20width%3D%22440%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.28)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22510%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22550%22%20width%3D%22300%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3C%2Fsvg%3E%20"
+    },
+    {
+      "id": "2",
+      "title": "Building AI Assistants",
+      "description": "Create intelligent AI agents that understand your business context, interact with users naturally, and perform complex tasks using advanced language models.",
+      "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20role%3D%22img%22%20aria-label%3D%22AI%20Assistants%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231d4ed8%22%2F%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%20%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url(%23g)%22%2F%3E%20%3Ccircle%20cx%3D%22980%22%20cy%3D%22120%22%20r%3D%22220%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22680%22%20r%3D%22180%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22170%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%3EAI%20Assistants%3C%2Ftext%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22240%22%20fill%3D%22rgba(255%2C255%2C255%2C0.82)%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%3EConversational%20UI%2C%20reasoning%2C%20and%20tool%20use%3C%2Ftext%3E%20%3Crect%20x%3D%2280%22%20y%3D%22310%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22350%22%20width%3D%22250%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22420%22%20width%3D%22520%22%20height%3D%22180%22%20rx%3D%2228%22%20fill%3D%22rgba(15%2C23%2C42%2C0.45)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22470%22%20width%3D%22440%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.28)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22510%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22550%22%20width%3D%22300%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3C%2Fsvg%3E%20"
+    },
+    {
+      "id": "3",
+      "title": "Creating Scalable Backend APIs",
+      "description": "Design and implement robust API architectures that handle growing traffic, maintain high availability, and integrate seamlessly with frontend applications.",
+      "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20role%3D%22img%22%20aria-label%3D%22Scalable%20APIs%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230ea5e9%22%2F%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%20%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url(%23g)%22%2F%3E%20%3Ccircle%20cx%3D%22980%22%20cy%3D%22120%22%20r%3D%22220%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22680%22%20r%3D%22180%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22170%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%3EScalable%20APIs%3C%2Ftext%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22240%22%20fill%3D%22rgba(255%2C255%2C255%2C0.82)%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%3EHigh-throughput%20services%20and%20clean%20contracts%3C%2Ftext%3E%20%3Crect%20x%3D%2280%22%20y%3D%22310%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22350%22%20width%3D%22250%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22420%22%20width%3D%22520%22%20height%3D%22180%22%20rx%3D%2228%22%20fill%3D%22rgba(15%2C23%2C42%2C0.45)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22470%22%20width%3D%22440%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.28)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22510%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22550%22%20width%3D%22300%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3C%2Fsvg%3E%20"
+    },
+    {
+      "id": "4",
+      "title": "Integrating Third-Party Services",
+      "description": "Connect disparate systems and services into unified workflows, enabling data flow between platforms and eliminating information silos.",
+      "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20role%3D%22img%22%20aria-label%3D%22Service%20Integrations%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%237c3aed%22%2F%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%20%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url(%23g)%22%2F%3E%20%3Ccircle%20cx%3D%22980%22%20cy%3D%22120%22%20r%3D%22220%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22680%22%20r%3D%22180%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22170%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%3EService%20Integrations%3C%2Ftext%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22240%22%20fill%3D%22rgba(255%2C255%2C255%2C0.82)%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%3ESync%20data%20across%20tools%20and%20systems%3C%2Ftext%3E%20%3Crect%20x%3D%2280%22%20y%3D%22310%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22350%22%20width%3D%22250%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22420%22%20width%3D%22520%22%20height%3D%22180%22%20rx%3D%2228%22%20fill%3D%22rgba(15%2C23%2C42%2C0.45)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22470%22%20width%3D%22440%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.28)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22510%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22550%22%20width%3D%22300%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3C%2Fsvg%3E%20"
+    },
+    {
+      "id": "5",
+      "title": "Processing Large Datasets",
+      "description": "Build efficient data pipelines that ingest, transform, and analyze large volumes of data, turning raw information into actionable business insights.",
+      "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20role%3D%22img%22%20aria-label%3D%22Data%20Pipelines%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23134e4a%22%2F%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%20%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url(%23g)%22%2F%3E%20%3Ccircle%20cx%3D%22980%22%20cy%3D%22120%22%20r%3D%22220%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22680%22%20r%3D%22180%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22170%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%3EData%20Pipelines%3C%2Ftext%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22240%22%20fill%3D%22rgba(255%2C255%2C255%2C0.82)%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%3EETL%2C%20validation%2C%20and%20analytics%20views%3C%2Ftext%3E%20%3Crect%20x%3D%2280%22%20y%3D%22310%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22350%22%20width%3D%22250%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22420%22%20width%3D%22520%22%20height%3D%22180%22%20rx%3D%2228%22%20fill%3D%22rgba(15%2C23%2C42%2C0.45)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22470%22%20width%3D%22440%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.28)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22510%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22550%22%20width%3D%22300%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3C%2Fsvg%3E%20"
+    },
+    {
+      "id": "6",
+      "title": "Building Internal Tools",
+      "description": "Develop custom internal applications and dashboards tailored to your team's specific needs, improving operational efficiency and decision-making.",
+      "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20role%3D%22img%22%20aria-label%3D%22Internal%20Tools%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23475569%22%2F%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%20%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url(%23g)%22%2F%3E%20%3Ccircle%20cx%3D%22980%22%20cy%3D%22120%22%20r%3D%22220%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22680%22%20r%3D%22180%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%2F%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22170%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%3EInternal%20Tools%3C%2Ftext%3E%20%3Ctext%20x%3D%2280%22%20y%3D%22240%22%20fill%3D%22rgba(255%2C255%2C255%2C0.82)%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%3EDashboards%2C%20admin%20panels%2C%20and%20ops%20tooling%3C%2Ftext%3E%20%3Crect%20x%3D%2280%22%20y%3D%22310%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22350%22%20width%3D%22250%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3Crect%20x%3D%2280%22%20y%3D%22420%22%20width%3D%22520%22%20height%3D%22180%22%20rx%3D%2228%22%20fill%3D%22rgba(15%2C23%2C42%2C0.45)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22470%22%20width%3D%22440%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.28)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22510%22%20width%3D%22360%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.22)%22%2F%3E%20%3Crect%20x%3D%22120%22%20y%3D%22550%22%20width%3D%22300%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22rgba(255%2C255%2C255%2C0.18)%22%2F%3E%20%3C%2Fsvg%3E%20"
+    }
+  ],
+  "categories": [
+    {
+      "id": "ai-agent",
+      "name": "AI Agent"
+    },
+    {
+      "id": "data-pipeline",
+      "name": "Data Pipeline"
+    },
+    {
+      "id": "backend-api",
+      "name": "Backend API"
+    },
+    {
+      "id": "chatbot",
+      "name": "Chatbot"
+    },
+    {
+      "id": "full-stack-app",
+      "name": "Full Stack App"
+    },
+    {
+      "id": "automation",
+      "name": "Automation"
+    },
+    {
+      "id": "integration-system",
+      "name": "Integration System"
+    }
+  ]
+}
