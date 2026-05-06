@@ -1,0 +1,6 @@
+[phases.install]
+cmds = ["cd ..", "npm ci"]
+
+[start]
+cmd = "cd .. && npm run start"
+
