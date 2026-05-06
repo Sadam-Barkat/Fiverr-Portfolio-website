@@ -22,6 +22,34 @@ app.use(cookieParser());
 app.use(express.json({ limit: "25mb" }));
 app.use("/uploads", express.static(path.resolve(process.cwd(), "public", "uploads")));
 
+app.get("/", (_req, res) => {
+  res.type("html").send(`<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio API</title>
+    <style>
+      body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 40px; color: #0f172a; }
+      code { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
+      a { color: #2563eb; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      ul { line-height: 1.8; }
+    </style>
+  </head>
+  <body>
+    <h1>Portfolio API is running</h1>
+    <p>Try:</p>
+    <ul>
+      <li><a href="/api/health"><code>/api/health</code></a></li>
+      <li><a href="/api/public/projects"><code>/api/public/projects</code></a></li>
+      <li><a href="/api/public/use-cases"><code>/api/public/use-cases</code></a></li>
+      <li><a href="/api/public/categories"><code>/api/public/categories</code></a></li>
+    </ul>
+  </body>
+</html>`);
+});
+
 type UploadedImage = {
   name?: string;
   mimeType?: string;
