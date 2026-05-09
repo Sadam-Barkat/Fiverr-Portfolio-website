@@ -166,10 +166,11 @@ app.post("/api/admin/login", (req, res) => {
 
   const token = randomUUID();
   sessions.add(token);
+  const secureCookie = req.secure;
   res.cookie("admin_session", token, {
     httpOnly: true,
-    sameSite: isProduction ? "none" : "lax",
-    secure: isProduction,
+    sameSite: secureCookie ? "none" : "lax",
+    secure: secureCookie,
     path: "/",
     maxAge: 1000 * 60 * 60 * 24,
   });
@@ -182,10 +183,11 @@ app.post("/api/admin/logout", (req, res) => {
     sessions.delete(token);
   }
 
+  const secureCookie = req.secure;
   res.clearCookie("admin_session", {
     path: "/",
-    sameSite: isProduction ? "none" : "lax",
-    secure: isProduction,
+    sameSite: secureCookie ? "none" : "lax",
+    secure: secureCookie,
   });
   res.json({ authenticated: false });
 });
