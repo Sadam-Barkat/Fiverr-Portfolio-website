@@ -14,12 +14,18 @@ const port = Number(process.env.PORT || 8787);
 const adminUsername = process.env.ADMIN_USERNAME || "admin";
 const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
 const sessions = new Set<string>();
+const isProduction = process.env.NODE_ENV === "production";
 
 const uploadsRoot = path.resolve(process.cwd(), "public", "uploads", "projects");
 const distDir = path.resolve(process.cwd(), "dist");
 
 app.set("trust proxy", 1);
-app.use(cors({ origin: true, credentials: true }));
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  }),
+);
 app.use(cookieParser());
 app.use(express.json({ limit: "25mb" }));
 app.use("/uploads", express.static(path.resolve(process.cwd(), "public", "uploads")));
@@ -162,8 +168,8 @@ app.post("/api/admin/login", (req, res) => {
   sessions.add(token);
   res.cookie("admin_session", token, {
     httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction,
     path: "/",
     maxAge: 1000 * 60 * 60 * 24,
   });
@@ -176,7 +182,11 @@ app.post("/api/admin/logout", (req, res) => {
     sessions.delete(token);
   }
 
-  res.clearCookie("admin_session", { path: "/" });
+  res.clearCookie("admin_session", {
+    path: "/",
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction,
+  });
   res.json({ authenticated: false });
 });
 
