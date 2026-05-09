@@ -18,6 +18,7 @@ const sessions = new Set<string>();
 const uploadsRoot = path.resolve(process.cwd(), "public", "uploads", "projects");
 const distDir = path.resolve(process.cwd(), "dist");
 
+app.set("trust proxy", 1);
 app.use(cors({ origin: true, credentials: true }));
 app.use(cookieParser());
 app.use(express.json({ limit: "25mb" }));
@@ -162,7 +163,7 @@ app.post("/api/admin/login", (req, res) => {
   res.cookie("admin_session", token, {
     httpOnly: true,
     sameSite: "lax",
-    secure: false,
+    secure: process.env.NODE_ENV === "production",
     path: "/",
     maxAge: 1000 * 60 * 60 * 24,
   });
