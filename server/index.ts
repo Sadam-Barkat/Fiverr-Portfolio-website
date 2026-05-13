@@ -7,6 +7,7 @@ import { randomUUID } from "node:crypto";
 import { promises as fs } from "node:fs";
 import { ensureStore, normalizeProject, readStore, writeStore } from "./portfolio-store.ts";
 import { normalizeCategory } from "./portfolio-store.ts";
+import { isCloudinaryConfigured, uploadDataUrlToCloudinary } from "./cloudinary-upload.ts";
 import type { Category, Project, UseCase } from "../src/data/portfolio-defaults.ts";
 
 const app = express();
@@ -114,6 +115,10 @@ async function storeUploadedImage(upload: UploadedImage, slug: string, kind: str
   const match = upload.dataUrl.match(/^data:(.+);base64,(.+)$/);
   if (!match) {
     return upload.dataUrl;
+  }
+
+  if (isCloudinaryConfigured()) {
+    return uploadDataUrlToCloudinary(upload.dataUrl, slug, kind);
   }
 
   const mimeType = upload.mimeType || match[1];
