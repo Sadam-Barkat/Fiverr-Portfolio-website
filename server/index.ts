@@ -2,6 +2,7 @@ import express from "express";
 import "dotenv/config";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import jwt from "jsonwebtoken";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { promises as fs } from "node:fs";
@@ -14,18 +15,28 @@ const app = express();
 const port = Number(process.env.PORT || 8787);
 const adminUsername = process.env.ADMIN_USERNAME || "admin";
 const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
-const sessions = new Set<string>();
-const isProduction = process.env.NODE_ENV === "production";
+const jwtSecret = process.env.JWT_SECRET || "dev-secret-change-me";
+const isProd = process.env.NODE_ENV === "production";
+const publicBaseUrl = process.env.PUBLIC_BASE_URL?.replace(/\/$/, "");
+const corsOrigins = process.env.CORS_ORIGIN
+  ?.split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+const sessionCookieName = "admin_session";
+const sessionMaxAgeMs = 1000 * 60 * 60 * 24;
 
 const uploadsRoot = path.resolve(process.cwd(), "public", "uploads", "projects");
 const distDir = path.resolve(process.cwd(), "dist");
 
-app.set("trust proxy", 1);
+if (isProd) {
+  app.set("trust proxy", 1);
+}
+
 app.use(
   cors({
-    origin: true,
+    origin: corsOrigins && corsOrigins.length > 0 ? corsOrigins : true,
     credentials: true,
-  }),
+  })
 );
 app.use(cookieParser());
 app.use(express.json({ limit: "25mb" }));
@@ -73,8 +84,15 @@ type ProjectPayload = Partial<Project> & {
 type CategoryPayload = Partial<Category>;
 
 const isAuthenticated = (req: express.Request) => {
-  const sessionToken = req.cookies?.admin_session;
-  return Boolean(sessionToken && sessions.has(sessionToken));
+  const sessionToken = req.cookies?.[sessionCookieName];
+  if (!sessionToken) return false;
+
+  try {
+    jwt.verify(sessionToken, jwtSecret);
+    return true;
+  } catch {
+    return false;
+  }
 };
 
 const requireAdmin = (req: express.Request, res: express.Response, next: express.NextFunction) => {
@@ -157,6 +175,22 @@ async function resolveProjectImages(project: ProjectPayload, slug: string, exist
   };
 }
 
+const withPublicBase = (value: string) => {
+  if (!publicBaseUrl || !value || !value.startsWith("/")) return value;
+  return `${publicBaseUrl}${value}`;
+};
+
+const toPublicProject = (project: Project): Project => ({
+  ...project,
+  thumbnailUrl: withPublicBase(project.thumbnailUrl),
+  images: (project.images || []).map(withPublicBase),
+});
+
+const toPublicUseCase = (useCase: UseCase): UseCase => ({
+  ...useCase,
+  thumbnailUrl: withPublicBase(useCase.thumbnailUrl),
+});
+
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
 });
@@ -169,27 +203,21 @@ app.post("/api/admin/login", (req, res) => {
     return;
   }
 
-  const token = randomUUID();
-  sessions.add(token);
-  const secureCookie = req.secure;
-  res.cookie("admin_session", token, {
+  const token = jwt.sign({ sub: username || adminUsername }, jwtSecret, { expiresIn: "1d" });
+  const secureCookie = isProd ? true : req.secure;
+  res.cookie(sessionCookieName, token, {
     httpOnly: true,
     sameSite: secureCookie ? "none" : "lax",
     secure: secureCookie,
     path: "/",
-    maxAge: 1000 * 60 * 60 * 24,
+    maxAge: sessionMaxAgeMs,
   });
   res.json({ authenticated: true });
 });
 
 app.post("/api/admin/logout", (req, res) => {
-  const token = req.cookies?.admin_session;
-  if (token) {
-    sessions.delete(token);
-  }
-
-  const secureCookie = req.secure;
-  res.clearCookie("admin_session", {
+  const secureCookie = isProd ? true : req.secure;
+  res.clearCookie(sessionCookieName, {
     path: "/",
     sameSite: secureCookie ? "none" : "lax",
     secure: secureCookie,
@@ -210,7 +238,7 @@ app.get("/api/public/projects", async (req, res) => {
   const filtered = category === "All" ? store.projects : store.projects.filter((project) => project.category === category);
   const total = filtered.length;
   const totalPages = Math.max(1, Math.ceil(total / limit));
-  const pageProjects = filtered.slice((page - 1) * limit, page * limit);
+  const pageProjects = filtered.slice((page - 1) * limit, page * limit).map(toPublicProject);
 
   res.json({
     projects: pageProjects,
@@ -227,12 +255,12 @@ app.get("/api/public/projects/:slug", async (req, res) => {
     return;
   }
 
-  res.json({ project });
+  res.json({ project: toPublicProject(project) });
 });
 
 app.get("/api/public/use-cases", async (_req, res) => {
   const store = await readStore();
-  res.json({ useCases: store.useCases });
+  res.json({ useCases: store.useCases.map(toPublicUseCase) });
 });
 
 app.get("/api/public/categories", async (_req, res) => {
@@ -242,12 +270,12 @@ app.get("/api/public/categories", async (_req, res) => {
 
 app.get("/api/admin/projects", requireAdmin, async (_req, res) => {
   const store = await readStore();
-  res.json({ projects: store.projects });
+  res.json({ projects: store.projects.map(toPublicProject) });
 });
 
 app.get("/api/admin/use-cases", requireAdmin, async (_req, res) => {
   const store = await readStore();
-  res.json({ useCases: store.useCases });
+  res.json({ useCases: store.useCases.map(toPublicUseCase) });
 });
 
 app.get("/api/admin/categories", requireAdmin, async (_req, res) => {
@@ -266,7 +294,7 @@ app.post("/api/admin/projects", requireAdmin, async (req, res) => {
 
   store.projects = [...store.projects, project];
   await writeStore(store);
-  res.status(201).json({ project });
+  res.status(201).json({ project: toPublicProject(project) });
 });
 
 app.put("/api/admin/projects/:id", requireAdmin, async (req, res) => {
@@ -286,7 +314,7 @@ app.put("/api/admin/projects/:id", requireAdmin, async (req, res) => {
 
   store.projects = store.projects.map((project) => (project.id === existing.id ? updated : project));
   await writeStore(store);
-  res.json({ project: updated });
+  res.json({ project: toPublicProject(updated) });
 });
 
 app.delete("/api/admin/projects/:id", requireAdmin, async (req, res) => {
@@ -308,7 +336,7 @@ app.post("/api/admin/use-cases", requireAdmin, async (req, res) => {
 
   store.useCases = [...store.useCases, useCase];
   await writeStore(store);
-  res.status(201).json({ useCase });
+  res.status(201).json({ useCase: toPublicUseCase(useCase) });
 });
 
 app.put("/api/admin/use-cases/:id", requireAdmin, async (req, res) => {
@@ -330,7 +358,7 @@ app.put("/api/admin/use-cases/:id", requireAdmin, async (req, res) => {
 
   store.useCases = store.useCases.map((useCase) => (useCase.id === updated.id ? next : useCase));
   await writeStore(store);
-  res.json({ useCase: next });
+  res.json({ useCase: toPublicUseCase(next) });
 });
 
 app.delete("/api/admin/use-cases/:id", requireAdmin, async (req, res) => {
@@ -408,6 +436,7 @@ app.use(async (req, res, next) => {
   }
 });
 
+await fs.mkdir(uploadsRoot, { recursive: true });
 await ensureStore();
 
 app.listen(port, () => {

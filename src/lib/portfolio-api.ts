@@ -51,15 +51,11 @@ const jsonHeaders = {
   "Content-Type": "application/json",
 };
 
-const apiBaseUrl = (() => {
-  const raw = (import.meta as { env?: Record<string, string | undefined> }).env?.VITE_API_BASE_URL?.trim();
-  if (!raw) return "";
-  return raw.endsWith("/") ? raw.slice(0, -1) : raw;
-})();
+const apiBase = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+const apiUrl = (path: string) => (apiBase ? new URL(path, apiBase).toString() : path);
 
 async function apiFetch<T>(path: string, options: RequestInit = {}): Promise<T> {
-  const url = apiBaseUrl && path.startsWith("/") ? `${apiBaseUrl}${path}` : path;
-  const response = await fetch(url, {
+  const response = await fetch(apiUrl(path), {
     credentials: "include",
     ...options,
     headers: {
